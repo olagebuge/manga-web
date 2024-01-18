@@ -1,18 +1,17 @@
 'use client'
 
-import { ObjectId } from "mongoose";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
 interface Story {
-  _id: ObjectId;
+  _id: any;
   title: string;
   cover: string;
-  author: ObjectId;
+  author: any;
   public: boolean;
   type: string;
   number: string;
-  subscribers: Array<ObjectId>;
+  subscribers: any;
   date: Date;
   views: number;
 }
