@@ -8,7 +8,7 @@ const Home = async ({}) => {
         <h1 className="h1title">最新作品</h1>
         <Link href="#">更多作品</Link>
       </div>
-      <NewStory />
+      {/* <NewStory /> */}
       <ApiData />
     </section>
   );
