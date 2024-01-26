@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["cloudflare-ipfs.com","localhost"],
+    domains: ["cloudflare-ipfs.com","localhost","images.remotePatterns"],
   },
 };
 

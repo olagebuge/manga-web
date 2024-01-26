@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 type Props ={
-    _id:string,
+    id:string,
     title:string,
     content:string,
     cover:string,
@@ -13,12 +13,11 @@ type Props ={
 }
 
 const fetchData = async()=>{
-    const res = await fetch("http://localhost:8080/api/homepage",{cache:'no-store'});
-    const data = await res.json();  
-    const stories: Props[] = data.stories;    
+    const res = await fetch("https://65af761c2f26c3f2139ad556.mockapi.io/api/v3/posts",{cache:'no-store'});
+    const data: Props[] = await res.json();
 
     //取最新的十筆資料
-    const latestTenStories = stories.slice(0, 10); 
+    const latestTenStories = data.slice(0, 10); 
    
     return latestTenStories;
 }
@@ -31,10 +30,10 @@ export const NewStory = async() => {
         <div className="flex flex-wrap w-[840px] gap-5 justify-center">
         {stories &&
           stories.map((post) => (
-            <Link  key={post._id} href={`/story/${post.type}-${post.number}`}>   
+            <Link  key={post.id} href={`/story/${post.type}-${post.number}`}>   
 
-                <Image src={`http://localhost:8080/${post.author._id}/${post.cover}`} width={150} height={150} alt="cover" />
-                <h3 className="w-[150px] text-sm">{post.title}</h3>     
+                <Image src={`${post.cover}`} width={150} height={150} alt="cover" />
+                <h3 className="w-[150px] text-sm">{post.author}</h3>     
 
             </Link>
           ))}
