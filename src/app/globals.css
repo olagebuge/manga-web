@@ -12,7 +12,23 @@ body {
 }
 
 .h1title{
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   letter-spacing: 3px;
   line-height: 5rem;
+}
+
+.form_button{
+  background-color: rgb(59, 152, 155);
+  border-radius: 6px;
+  letter-spacing: 3px;
+  color:#fff;
+  width: 50%;
+  align-self: center;
+  padding: 10px 30px;
+}
+
+.slink{
+  color:brown;
+  text-decoration: underline;
+  margin-left: 2px;
 }
